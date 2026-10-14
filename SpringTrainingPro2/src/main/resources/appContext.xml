@@ -7,15 +7,17 @@
            http://www.springframework.org/schema/beans/spring-beans.xsd
            http://www.springframework.org/schema/context
            http://www.springframework.org/schema/context/spring-context.xsd">
-<context:property-placeholder location="classpath:application.properties"/>
+    
+    <context:component-scan base-package="org.example"/>
+    <context:property-placeholder location="classpath:application.properties"/>
     <!-- Пример бина -->
-    <bean id="videoCard"
-          class="org.example.Card">
-        <constructor-arg name="mark" value="${mark}"/>
-<constructor-arg name="series" value="${series}"/>
+<!--    <bean id="card"-->
+<!--          class="org.example.Card" init-method="init" destroy-method="destroy" scope="prototype"/>-->
+<!--        <constructor-arg name="mark" value="${mark}"/>-->
+<!--<constructor-arg name="series" value="${series}"/>-->
 
-</bean>
-    <bean id="computer" class="org.example.Computer">
-        <property name="videoCard" ref="videoCard"/>
-    </bean>
+<!--</bean>-->
+<!--    <bean id="computer" class="org.example.Computer">-->
+<!--        <property name="videoCard" ref="videoCard"/>-->
+<!--    </bean>-->
 </beans>

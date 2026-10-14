@@ -4,6 +4,11 @@ public class Card implements VideoCard {
     private int series;
     private String mark;
 
+    public Card(int series, String mark) {
+        this.series = series;
+        this.mark = mark;
+    }
+
     public String getMark() {
         return mark;
     }

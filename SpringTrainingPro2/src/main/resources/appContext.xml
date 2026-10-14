@@ -7,12 +7,13 @@
            http://www.springframework.org/schema/beans/spring-beans.xsd
            http://www.springframework.org/schema/context
            http://www.springframework.org/schema/context/spring-context.xsd">
-
+<context:property-placeholder location="classpath:application.properties"/>
     <!-- Пример бина -->
     <bean id="videoCard"
           class="org.example.Card">
-    <property name="mark" value="Nvidia RTX"/>
-        <property name="series" value="660"/>
+        <constructor-arg name="mark" value="${mark}"/>
+<constructor-arg name="series" value="${series}"/>
+
 </bean>
     <bean id="computer" class="org.example.Computer">
         <property name="videoCard" ref="videoCard"/>

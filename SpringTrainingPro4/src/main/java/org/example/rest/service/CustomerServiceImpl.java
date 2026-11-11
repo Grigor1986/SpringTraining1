@@ -17,10 +17,28 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     @Transactional
-    public List<Customer> getCustomersWithA() {
+    public List<Customer> getCustomers() {
         List<Customer> customers = customerRepository.findAll();
         return customers.stream()
                 .filter(c -> c.getFirstName().contains("a") || c.getFirstName().contains("A"))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    @Transactional
+    public Customer getCustomersById(Integer id) {
+        return customerRepository.findById(id);
+    }
+
+    @Override
+    @Transactional
+    public Customer save(Customer customer) {
+        return customerRepository.save(customer);
+    }
+
+    @Override
+    @Transactional
+    public void delete(Integer id) {
+        customerRepository.delete(id);
     }
 }

@@ -5,5 +5,11 @@ import org.example.rest.entity.Customer;
 import java.util.List;
 
 public interface CustomerService {
-    List<Customer> getCustomersWithA();
+    List<Customer> getCustomers();
+
+    Customer getCustomersById(Integer id);
+
+    Customer save(Customer customer);
+
+    void delete(Integer id);
 }

@@ -18,4 +18,10 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
     protected String[] getServletMappings() {
         return new String[]{"/"};
     }
+
+    @Override
+    protected String getServletName() {
+        return "dispatcher2"; // временно!
+    }
 }
+

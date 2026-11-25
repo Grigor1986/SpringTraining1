@@ -23,13 +23,14 @@
     </tr>
     <c:forEach var="empl" items="${employees}">
         <tr>
-            <td>${empl.name}</td>
+            <td>${empl.empName}</td>
             <td>${empl.surname}</td>
             <td>${empl.department}</td>
         </tr>
-
     </c:forEach>
 </table>
-
+<br>
+<br>
+<input type="button" value="Добавить" onclick="window.location.href='add'">
 </body>
 </html>

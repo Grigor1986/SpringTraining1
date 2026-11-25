@@ -25,4 +25,12 @@ public class EmployeeRepositoryImpl implements EmployeeRepository{
         Session session = sessionFactory.getCurrentSession();
         return session.createQuery("from Employee ", Employee.class).getResultList();
     }
+
+    @Override
+    @Transactional
+    public void save(Employee employee) {
+        Session session = sessionFactory.getCurrentSession();
+        session.saveOrUpdate(employee);
+
+    }
 }
